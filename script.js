@@ -19,7 +19,7 @@ const attribution = Object.fromEntries(
 window.dataLayer = window.dataLayer || []
 
 function getSchedulingUrl(source = 'lp') {
-  const destination = new URL('agendar/', window.location.href)
+  const destination = new URL('/agendar/', window.location.origin)
   const params = new URLSearchParams(window.location.search)
 
   Object.entries(attribution).forEach(([key, value]) => {
