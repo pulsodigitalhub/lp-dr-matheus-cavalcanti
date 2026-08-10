@@ -33,7 +33,8 @@
 
 ## Ativos e fontes
 
-- Site público: https://drmatheuscavalcanti.com.br/
+- Site público: https://drmatheuscavalcantidf.com.br/ (confirmado ao vivo em 2026-08-10; domínio anterior `drmatheuscavalcanti.com.br` estava desatualizado neste doc).
+- Repositório: `github.com/pulsodigitalhub/lp-dr-matheus-cavalcanti` (mirror do repo original `calilmf/lp-dr-matheus-cavalcanti`, casa atual desde 2026-08-07).
 - Documento de briefing: Google Doc `1OwmZ6BzZmMNgzwRHo-yU2PUPCUp2PXOrqH-MY9Efns0`.
 - Pasta de marca e fotografias: Drive `1QoTpFKm9wan8Kjd3Xuox5CXaL-I99RRj`.
 - WhatsApp: https://tintim.link/whatsapp/8ecd6b81-7447-41c1-ab41-56c76e44cfd5/c281f571-2564-42f2-bb8f-8745e005da88
@@ -41,7 +42,7 @@
 
 ## Pendências
 
-- `[A VALIDAR]` Lista final de convênios e regras de autorização antes do domínio de produção.
+- ~~Lista final de convênios~~ — resolvido: 46 convênios publicados em `#convenios` no `index.html`, confirmado em 2026-08-10.
 - `[A VALIDAR]` Endpoint de CRM/webhook caso seja adotada captura de nome e telefone antes do WhatsApp.
-- `[A VALIDAR]` Domínio e canonical definitivos da campanha.
+- ~~Domínio e canonical definitivos~~ — resolvido: `drmatheuscavalcantidf.com.br`, aplicado em `og:url`/`canonical`/JSON-LD do `index.html` em 2026-08-10.
 
