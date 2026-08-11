@@ -1,6 +1,9 @@
 node_modules/
 dist/
 .DS_Store
+.env
+.env.*
+!.env.example
 
 # intermediarios do fluxo de icones (regeneraveis a partir de cards-icones.json)
 candidatos*/
