@@ -14,7 +14,7 @@
 ## Conversão e mensuração
 
 - [x] CTA principal presente no header, hero, seções intermediárias, fechamento e barra móvel.
-- [x] Link Tintim oficial usado em todos os CTAs de WhatsApp.
+- [x] Link Pulso oficial usado em todos os CTAs de WhatsApp.
 - [x] UTMs, `gclid`, `gbraid` e `wbraid` preservados no encaminhamento.
 - [x] Eventos `click_whatsapp`, `click_phone`, `click_map` e `faq_open` enviados ao `dataLayer`.
 - [x] Container `GTM-T4T2P4Q5` instalado conforme o site oficial.

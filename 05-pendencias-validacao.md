@@ -13,6 +13,6 @@
 - O GitHub Pages é preview e permanece com `noindex, follow`.
 - Não usar depoimentos, avaliações, números de pacientes ou taxas de resultado sem autorização e fonte.
 - Não destacar PMDF na lista de convênios.
-- Manter o link Tintim como destino oficial de WhatsApp.
+- Manter o link Pulso como destino oficial de WhatsApp.
 - A ausência de formulário não bloqueia o preview; o CTA direto está alinhado ao canal fornecido.
 

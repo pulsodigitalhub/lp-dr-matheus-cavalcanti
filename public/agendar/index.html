@@ -225,7 +225,9 @@
           whatsappUrl.searchParams.set('landing_page_url', window.location.origin + fallbackPath)
         }
 
-        whatsappUrl.searchParams.set('mensagem', 'Olá! Quero saber mais informações.')
+        if (!whatsappUrl.searchParams.has('ponto_conversao')) {
+          whatsappUrl.searchParams.set('ponto_conversao', 'agendar')
+        }
         return whatsappUrl.toString()
       }
 

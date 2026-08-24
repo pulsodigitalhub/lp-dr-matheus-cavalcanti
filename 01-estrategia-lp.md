@@ -45,4 +45,4 @@ Essa espinha replica o padrão recorrente das LPs Pulso. A identidade visual con
 - Cliques em “Confirmar meu convênio”.
 - Cliques de telefone e rota.
 - Abertura de FAQs relacionadas a consulta, convênio e infiltração.
-- Taxa de conversão por intenção/campanha no Google Ads e no Tintim.
+- Taxa de conversão por intenção/campanha no Google Ads e no Pulso.

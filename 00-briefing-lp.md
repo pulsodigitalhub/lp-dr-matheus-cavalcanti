@@ -27,7 +27,7 @@
 
 - **CTA primário:** “Agendar avaliação ortopédica”.
 - **CTA secundário:** “Confirmar meu convênio”.
-- **Destino:** link Tintim/WhatsApp publicado pelo médico.
+- **Destino:** link Pulso/WhatsApp publicado pelo médico.
 - **Eventos esperados:** `click_whatsapp`, `click_phone`, `click_map` e `faq_open`, sempre com a posição do elemento.
 - **Atribuição:** preservar `utm_*`, `gclid`, `gbraid` e `wbraid` nos links de saída.
 
@@ -37,7 +37,7 @@
 - Repositório: `github.com/pulsodigitalhub/lp-dr-matheus-cavalcanti` (mirror do repo original `calilmf/lp-dr-matheus-cavalcanti`, casa atual desde 2026-08-07).
 - Documento de briefing: Google Doc `1OwmZ6BzZmMNgzwRHo-yU2PUPCUp2PXOrqH-MY9Efns0`.
 - Pasta de marca e fotografias: Drive `1QoTpFKm9wan8Kjd3Xuox5CXaL-I99RRj`.
-- WhatsApp: https://tintim.link/whatsapp/8ecd6b81-7447-41c1-ab41-56c76e44cfd5/c281f571-2564-42f2-bb8f-8745e005da88
+- WhatsApp: https://sistema.pulso.marketing/go/dr-matheus-cavalcanti
 - Telefone: (61) 9516-9248.
 
 ## Pendências

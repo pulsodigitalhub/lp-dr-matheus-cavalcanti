@@ -11,7 +11,7 @@ Landing page de campanha para avaliação em Ortopedia e Traumatologia em Brasí
 
 ## Conversão
 
-- Destino oficial: Tintim/WhatsApp.
+- Destino oficial: Pulso/WhatsApp.
 - Eventos `dataLayer`: `click_whatsapp`, `click_phone`, `click_map` e `faq_open`.
 - Parâmetros preservados: `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`, `gclid`, `gbraid` e `wbraid`.
 
