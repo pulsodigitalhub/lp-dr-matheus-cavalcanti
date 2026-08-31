@@ -206,54 +206,7 @@
     </main>
 
     <script>
-      const progress = document.querySelector('.progress')
-      const button = document.querySelector('#manual-button')
-      const duration = 2500
-      const startedAt = Date.now()
-      let redirected = false
-
-      function buildRedirectUrl() {
-        const params = new URLSearchParams(window.location.search)
-        const whatsappUrl = new URL('https://sistema.pulso.marketing/go/dr-matheus-cavalcanti')
-
-        params.forEach((value, key) => {
-          whatsappUrl.searchParams.set(key, value)
-        })
-
-        if (!whatsappUrl.searchParams.has('landing_page_url')) {
-          const fallbackPath = window.location.pathname.replace(/agendar\/?$/, '')
-          whatsappUrl.searchParams.set('landing_page_url', window.location.origin + fallbackPath)
-        }
-
-        if (!whatsappUrl.searchParams.has('ponto_conversao')) {
-          whatsappUrl.searchParams.set('ponto_conversao', 'agendar')
-        }
-        return whatsappUrl.toString()
-      }
-
-      function redirectNow() {
-        if (redirected) return
-        redirected = true
-        window.location.href = buildRedirectUrl()
-      }
-
-      button.addEventListener('click', redirectNow)
-
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push({
-        event: 'whatsapp_redirect_page',
-        page_location: window.location.href,
-      })
-
-      const timer = window.setInterval(() => {
-        const amount = Math.min((Date.now() - startedAt) / duration, 1)
-        progress.style.strokeDashoffset = String(276.46 * (1 - amount))
-
-        if (amount >= 1) {
-          window.clearInterval(timer)
-          redirectNow()
-        }
-      }, 30)
+      window.location.href = '/' + window.location.search
     </script>
   </body>
 </html>

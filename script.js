@@ -18,44 +18,12 @@ const attribution = Object.fromEntries(
 
 window.dataLayer = window.dataLayer || []
 
-function getSchedulingUrl(source = 'lp') {
-  const destination = new URL('/agendar/', window.location.origin)
-  const params = new URLSearchParams(window.location.search)
-
-  Object.entries(attribution).forEach(([key, value]) => {
-    params.set(key, value)
-  })
-
-  params.set('landing_page_url', window.location.origin + window.location.pathname)
-  params.set('ponto_conversao', source)
-
-  if (document.referrer) {
-    params.set('referrer_url', document.referrer)
-  }
-
-  destination.search = params.toString()
-  return destination.toString()
-}
-
 function track(event, payload = {}) {
   window.dataLayer.push({
     event,
     ...payload,
     ...attribution,
     page_location: window.location.href,
-  })
-}
-
-function decorateWhatsappLinks() {
-  document.querySelectorAll('a[data-cta]').forEach((link) => {
-    link.href = getSchedulingUrl(link.dataset.cta)
-
-    link.addEventListener('click', () => {
-      track('click_whatsapp', {
-        cta_location: link.dataset.cta,
-        link_url: link.href,
-      })
-    })
   })
 }
 
@@ -115,7 +83,6 @@ function enableProgressiveReveal() {
 }
 
 function boot() {
-  decorateWhatsappLinks()
   bindSecondaryActions()
   bindHeaderState()
   enableProgressiveReveal()
