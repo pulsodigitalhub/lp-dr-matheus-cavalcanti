@@ -9,6 +9,8 @@
   --ink: #24251f;
   --muted: #66685f;
   --line: rgba(38, 38, 28, 0.18);
+  --cta-green: #00a63d;
+  --cta-green-dark: #008a32;
   --sans: 'General Sans', Arial, sans-serif;
   --display: 'Cabinet Grotesk', Arial, sans-serif;
   --mono: 'IBM Plex Mono', Consolas, monospace;
@@ -165,37 +167,37 @@ nav a:focus-visible {
 .button-small {
   min-height: 45px;
   gap: 18px;
-  border-color: var(--olive);
-  color: var(--olive);
+  border-color: var(--cta-green);
+  color: var(--cta-green);
   white-space: nowrap;
 }
 
 .button-small:hover,
 .button-small:focus-visible {
-  background: var(--olive);
+  background: var(--cta-green);
   color: white;
 }
 
 .button-primary {
   min-width: 228px;
-  background: var(--olive);
+  background: var(--cta-green);
   color: white;
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: var(--olive-dark);
+  background: var(--cta-green-dark);
 }
 
 .button-light {
   min-width: 260px;
-  background: var(--white);
-  color: var(--olive-dark);
+  background: var(--cta-green);
+  color: white;
 }
 
 .button-light:hover,
 .button-light:focus-visible {
-  background: var(--sand);
+  background: var(--cta-green-dark);
 }
 
 .hero {
@@ -1811,8 +1813,8 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--sand);
-    color: var(--olive-dark);
+    background: var(--cta-green);
+    color: white;
     font-size: 14px;
     font-weight: 700;
     box-shadow: 0 -8px 24px rgba(38, 38, 28, 0.11);
