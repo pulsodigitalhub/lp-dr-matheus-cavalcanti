@@ -18,6 +18,7 @@ export default defineConfig({
         'ortopedista-aguas-claras': r('ortopedista-aguas-claras/index.html'),
         'ortopedista-asa-norte': r('ortopedista-asa-norte/index.html'),
         convenio: r('convenio/index.html'),
+        'politicas-de-privacidade': r('politicas-de-privacidade/index.html'),
       },
     },
   },
