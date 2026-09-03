@@ -164,6 +164,18 @@ nav a:focus-visible {
   font-weight: 400;
 }
 
+.button-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
 .button-small {
   min-height: 45px;
   gap: 18px;
