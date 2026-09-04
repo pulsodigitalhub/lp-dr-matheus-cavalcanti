@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var WEBHOOK_URL = 'https://leads-clientes.sergioshouse.com.br/matheus';
+  var WEBHOOK_URL = '/api/lead';
   var DEFAULT_PHONE = '556195169248';
   var DEFAULT_DOCTOR = 'Dr. Matheus Cavalcanti';
 
@@ -135,7 +135,16 @@
     return href.indexOf('https://wa.me/') === 0 || href.indexOf('https://api.whatsapp.com/') === 0;
   }
 
+  /* O popup so aparece para quem chega por anuncio. Visitante organico ou vindo
+     do Perfil da Empresa segue direto para o WhatsApp, sem coleta de dados. */
+  function isAdsTraffic() {
+    var q = window.location.search;
+    return /[?&](gclid|gbraid|wbraid)=/.test(q) || /[?&]utm_medium=cpc(&|$)/.test(q);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    if (!isAdsTraffic()) return;
+
     Array.prototype.filter.call(document.querySelectorAll('a, [data-lead-open]'), isWhatsAppTrigger).forEach(function (trigger) {
       trigger.addEventListener('click', function (event) { event.preventDefault(); openModal(trigger); });
     });
