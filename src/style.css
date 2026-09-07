@@ -1431,6 +1431,26 @@ footer p {
   gap: 7px;
 }
 
+.footer-nav {
+  margin: 4px 0 12px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--sand);
+}
+
+.footer-nav p {
+  margin: 0;
+}
+
+.footer-nav span {
+  opacity: 0.8;
+}
+
+.footer-nav a {
+  color: var(--sand);
+  border-bottom: 1px solid rgba(198, 181, 163, 0.45);
+}
+
 .footer-links a {
   color: var(--sand);
   border-bottom: 1px solid rgba(198, 181, 163, 0.45);
