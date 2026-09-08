@@ -84,9 +84,10 @@
     window.setTimeout(function () { nameInput.focus(); }, 50);
   }
 
-  /* Saida sem coleta: fechar o popup, por qualquer caminho, leva ao WhatsApp.
-     Sem isto o formulario vira portao obrigatorio, e nenhum visitante alcanca o
-     canal de contato sem entregar nome e telefone. */
+  /* Saida sem coleta: o botao "Prefiro ir direto para o WhatsApp" abre a conversa
+     sem enviar nada. Sem ele o formulario vira portao obrigatorio, e nenhum
+     visitante alcanca o canal de contato sem entregar nome e telefone.
+     X, Esc e clique fora apenas fecham o popup, sem navegar. */
   function irParaWhatsApp() {
     var url = 'https://wa.me/' + current.phone;
     closeModal();
