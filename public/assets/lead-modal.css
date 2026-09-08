@@ -27,3 +27,24 @@ body.lead-modal-open { overflow: hidden; }
 .lead-modal-privacy a {
   text-decoration: underline;
 }
+
+.lead-modal-skip {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+.lead-modal-skip-btn {
+  background: none;
+  border: 0;
+  padding: 4px 2px;
+  font: inherit;
+  font-size: 0.85rem;
+  color: inherit;
+  opacity: 0.8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.lead-modal-skip-btn:hover {
+  opacity: 1;
+}
