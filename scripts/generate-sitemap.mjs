@@ -16,6 +16,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 const BASE_URL = process.env.SITEMAP_BASE_URL;
 if (!BASE_URL) {
@@ -90,6 +91,36 @@ if (fs.existsSync(distDir)) {
   }
 }
 
+// <lastmod> por rota. Sem ele o sitemap nao informa que a pagina mudou, e o Google
+// nao tem sinal nenhum pra voltar a rastrear — foi o que atrasou a reindexacao da
+// home em 07-08/09/2026. A data vem do ultimo commit do arquivo-fonte (nao do mtime,
+// que no CI e sempre a hora do checkout e mudaria o sitemap a cada build).
+const DATA_COMMIT = new Map();
+function ultimoCommitISO(arquivoFonte) {
+  if (DATA_COMMIT.has(arquivoFonte)) return DATA_COMMIT.get(arquivoFonte);
+  let data = null;
+  try {
+    const saida = execFileSync('git', ['log', '-1', '--format=%cI', '--', arquivoFonte], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    if (saida) data = saida.slice(0, 10);
+  } catch {
+    data = null;
+  }
+  DATA_COMMIT.set(arquivoFonte, data);
+  return data;
+}
+
+// Da rota publica (/joelho/) de volta pro arquivo no repo (joelho/index.html).
+function fonteDaRota(rota) {
+  const rel = rota === '/' ? 'index.html' : rota.replace(/^\//, '').replace(/\/$/, '') + '/index.html';
+  for (const cand of [rel, path.join('public', rel)]) {
+    if (fs.existsSync(path.join(ROOT, cand))) return cand;
+  }
+  return null;
+}
+
 function esc(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 }
@@ -103,7 +134,12 @@ function toUrl(r) {
 const sorted = [...routes].sort();
 const base = BASE_URL.replace(/\/$/, '');
 const urls = sorted
-  .map((r) => `  <url>\n    <loc>${esc(base + toUrl(r))}</loc>\n  </url>`)
+  .map((r) => {
+    const fonte = fonteDaRota(r);
+    const data = fonte ? ultimoCommitISO(fonte) : null;
+    const lastmod = data ? `\n    <lastmod>${data}</lastmod>` : '';
+    return `  <url>\n    <loc>${esc(base + toUrl(r))}</loc>${lastmod}\n  </url>`;
+  })
   .join('\n');
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 

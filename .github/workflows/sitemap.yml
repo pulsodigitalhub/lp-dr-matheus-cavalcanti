@@ -20,6 +20,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          # historico completo: o gerador le a data do ultimo commit de cada pagina
+          # pra escrever <lastmod>. Com checkout raso todas as paginas herdariam a
+          # data do HEAD e o sitemap mudaria inteiro a cada push.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
