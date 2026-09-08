@@ -4,5 +4,22 @@
       "source": "/api/lead",
       "destination": "https://leads-clientes.sergioshouse.com.br/matheus"
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "lp-dr-matheus-cavalcanti.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }
