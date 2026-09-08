@@ -16,3 +16,14 @@
 .lead-modal-submit:disabled { opacity: .7; cursor: default; }
 .lead-modal-submit svg { width: 18px; height: 18px; flex: none; }
 body.lead-modal-open { overflow: hidden; }
+
+.lead-modal-privacy {
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.lead-modal-privacy a {
+  text-decoration: underline;
+}

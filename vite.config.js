@@ -19,6 +19,7 @@ export default defineConfig({
         'ortopedista-asa-norte': r('ortopedista-asa-norte/index.html'),
         convenio: r('convenio/index.html'),
         'politicas-de-privacidade': r('politicas-de-privacidade/index.html'),
+        sobre: r('sobre/index.html'),
       },
     },
   },
