@@ -2152,3 +2152,16 @@ footer p {
     gap: 36px;
   }
 }
+
+.convenio-nota {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+}
+
+.convenio-nota p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
