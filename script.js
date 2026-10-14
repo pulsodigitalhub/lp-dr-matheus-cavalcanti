@@ -1,3 +1,5 @@
+import { initWhatsappTracking } from './wa-tracking.js'
+
 const attributionKeys = [
   'utm_source',
   'utm_medium',
@@ -82,7 +84,24 @@ function enableProgressiveReveal() {
   elements.forEach((element) => observer.observe(element))
 }
 
+function bindWhatsappTracking() {
+  // Rastreamento nunca pode atrasar ou impedir a ida para o WhatsApp.
+  try {
+    initWhatsappTracking({
+      client: 'dr-matheus-cavalcanti',
+      prefix: 'MC',
+      doctor: 'o Dr. Matheus Cavalcanti',
+      booking: 'uma consulta',
+      onClick: (source, anchor, eventId) => {
+        track('whatsapp_click', { location: source, event_id: eventId })
+        track('lead_submit', { lead_source: source, event_id: eventId })
+      },
+    })
+  } catch {}
+}
+
 function boot() {
+  bindWhatsappTracking()
   bindSecondaryActions()
   bindHeaderState()
   enableProgressiveReveal()
