@@ -94,7 +94,7 @@ function bindWhatsappTracking() {
       booking: 'uma consulta',
       onClick: (source, anchor, eventId) => {
         track('whatsapp_click', { location: source, event_id: eventId })
-        track('lead_submit', { lead_source: source, event_id: eventId })
+        track('lead_form_submit', { lead_source: source, event_id: eventId })
       },
     })
   } catch {}
